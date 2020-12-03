@@ -1,3 +1,10 @@
+<% if @newbook.errors.any? %>
+	<%= @newbook.errors.count %> errors
+	<% @newbook.errors.full_messages.each do |message| %>
+		<%= message %>
+	<% end %>
+<% end %>
+
 <div class="row">
 	<div class="col-xs-3">
 
@@ -5,7 +12,7 @@
 		<%= render 'users/profile', user: current_user %>
 
 		<h2>New book</h2>
-		<%= render 'books/form', book: @book %>
+		<%= render 'books/form', book: @newbook %>
 
 	</div>
 
